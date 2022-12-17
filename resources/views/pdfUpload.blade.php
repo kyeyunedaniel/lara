@@ -10,18 +10,15 @@
     <br><br>
     <h2 style="text-align:center;">PDF UPLOAD</h2>
     <br> <br>
-    <div>
-    @if(session()->has('error'))
-    <div class="alert alert-danger">
-        {{ session()->get('error') }}
-    </div>
+    <div class ="ext">
+        @if(session()->has('error'))
+        <div class="alert alert-danger">{{ session()->get('error') }}</div>
     @endif
     @if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div>
-    </div>
+    <div class="alert alert-success"> {{ session()->get('success') }}</div>
+   
     @endif
+     </div>
     <div class="ext">
         <form action="uploadfile" method="post"enctype="multipart/form-data">
             @csrf
