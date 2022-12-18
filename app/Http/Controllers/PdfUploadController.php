@@ -10,6 +10,7 @@ class PdfUploadController extends Controller
     public function getPdf(Request $Request)
     {   
         $data = new PdfUpload();
+        //get user input from the table 
         $comment = $Request->input('comment_added');
         $fileextension = $Request->file('selectedfile')->extension();
         //get the location folder because we need it in the dattabase 
@@ -32,6 +33,7 @@ class PdfUploadController extends Controller
         $filelocation='storage/'.$filename;
         //check if extension is pdf
 
+        //data input->(table column name) = (set variable)
         $data ->comment=$comment;
         $data ->name=$filename;
         $data ->size=$filesize;
