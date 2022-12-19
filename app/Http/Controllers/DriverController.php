@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 use Freshbitsweb\Laratables\Laratables;
 use Illuminate\Http\Request;
 use App\Models\Driver;
-use DB;
-// use Driver;
+// use DB;
 class DriverController extends Controller
 {
     //
@@ -18,14 +17,7 @@ class DriverController extends Controller
 
     public function larat()
     {
-        // return Laratables::recordsOf(Driver::class, function($query)
-        // {
-        //     return $query->where('id', '1');
-        // });
-
-         $table = Laratables::recordsOf(Driver::class);
-         dd($table);
-         //return $table;
+        return Laratables::recordsOf(Driver::class);
     }
    
     public function getDrivers()
@@ -33,5 +25,9 @@ class DriverController extends Controller
         
 
         return Laratables::recordsOf(Driver::class);
-}
+        
+    }
+    public function getLarat(){
+        return view('lara');
+    }
 }

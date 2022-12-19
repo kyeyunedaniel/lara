@@ -57,7 +57,7 @@ Route::get('click_edit/{id}','App\Http\Controllers\TrainingViewController@editfu
 
 Route::post('update_trainings/{id}','App\Http\Controllers\TrainingViewController@update_trainings');
 
-Route::get('laratrials','App\Http\Controllers\DriverController@larat');
+Route::get('laratrials','App\Http\Controllers\DriverController@larat')->name('larat.names');
 
 Route::get('laratrials/list','App\Http\Controllers\DriverController@getDrivers')->name('drivers.list');
 
@@ -72,3 +72,6 @@ Route::post('uploadfile','App\Http\Controllers\PdfUploadController@getPdf');
 //Route::get('download/{filex}', function(){return($filex);});
 
 Route::view('navba','layouts.navigationbar');
+
+
+Route::get('laraweb','App\Http\Controllers\DriverController@getLarat');
