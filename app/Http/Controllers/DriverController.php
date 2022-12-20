@@ -24,7 +24,10 @@ class DriverController extends Controller
     {   
         
 
-        return Laratables::recordsOf(Driver::class);
+    return Laratables::recordsOf(Driver::class, function($query)
+        {
+        return $query->where('id', 1);
+        });
         
     }
     public function getLarat(){

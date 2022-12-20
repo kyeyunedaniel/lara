@@ -1,12 +1,12 @@
 var listing = 
 {
-    'driver_requests_owner' : {
-        'url' : "{{ route('drivers.list') }}",
+    'store_asset_movements_requests_owner' : {
+        'url' : "{{ route('asset-borrow.index.getlist') }}",
         'cols' : [
             { name: 'id' },
-            { name: 'firstname' },
-            { name: 'lastname' },
-            { name: 'email' },
+            { name: 'Request_Date' },
+            { name: 'Request_By' },
+            { name: 'Summary' },
         ]
         },
 

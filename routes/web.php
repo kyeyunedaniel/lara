@@ -57,9 +57,9 @@ Route::get('click_edit/{id}','App\Http\Controllers\TrainingViewController@editfu
 
 Route::post('update_trainings/{id}','App\Http\Controllers\TrainingViewController@update_trainings');
 
-Route::get('laratrials','App\Http\Controllers\DriverController@larat')->name('larat.names');
+//Route::get('laratrials','App\Http\Controllers\DriverController@larat')->name('larat.names');
 
-Route::get('laratrials/list','App\Http\Controllers\DriverController@getDrivers')->name('drivers.list');
+Route::get('laratrials/list','App\Http\Controllers\DriverController@getDrivers')->name('drivers.list.self');
 
 
 Route::get('pdfUpload','App\Http\Controllers\PdfUploadController@viewPdf');
@@ -75,3 +75,8 @@ Route::view('navba','layouts.navigationbar');
 
 
 Route::get('laraweb','App\Http\Controllers\DriverController@getLarat');
+
+
+Route::get('assetborrowing','App\Http\Controllers\AssetBorrowingController@indexOwner');
+
+Route::get('assetborrowing/lists','App\Http\Controllers\AssetBorrowingController@getLists')->name('asset-borrow.index.getlist');
