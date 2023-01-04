@@ -80,3 +80,5 @@ Route::get('laraweb','App\Http\Controllers\DriverController@getLarat');
 Route::get('assetborrowing','App\Http\Controllers\AssetBorrowingController@indexOwner');
 
 Route::get('assetborrowing/lists','App\Http\Controllers\AssetBorrowingController@getLists')->name('asset-borrow.index.getlist');
+
+Route::get('pdfview','App\Http\Controllers\StudViewController@pdfviewer');
