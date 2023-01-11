@@ -59,3 +59,42 @@
 </body>
 
 </html>
+
+<script>
+
+function loadListing(){
+  if($('.data-table').length > 0){
+    $('.data-table,.inner-table').each(function(){
+
+      var table = $(this).attr('class').split(' ')[1]
+      var id = $(this).attr('class').split(' ')[2]
+      var extraParam = $(this).attr('class').split(' ')[3]
+
+      initiateDataTable(table,table,id,extraParam)
+    })
+  }
+
+  if($('.ajaxLoad').length > 0){
+    $('.ajaxLoad').each(function(){
+      var route = $(this).attr('class').split(' ')[1]
+
+      loadPart($(this),route)
+    })
+  }
+
+
+          if($('.realtime_table_totals').length > 0){
+
+              /**
+               * This handles tables where the table has totals at the bottom and the totals
+               * are calculated attributes from the backed.
+               */
+              $('.realtime_table_totals').each(function(){
+                  var totalsContentUrl = $(this).attr('data-totals-href');
+                  loadRealTimeTableTotals($(this),totalsContentUrl)
+              })
+          }
+
+
+			}
+</script>
