@@ -19,7 +19,7 @@ use App\Http\Controllers\DriverController;
 
 Route::get('/', function () {
     return redirect('view-records');
-});
+})->middleware('auth');
 
 Auth::routes();
 
@@ -29,14 +29,14 @@ Route::get('view-records','App\Http\Controllers\StudViewController@index')->name
 
 
 //localhost:8000/view-records
-Route::get('insert','App\Http\Controllers\UserInsertController@insertform');
+Route::get('insert','App\Http\Controllers\UserInsertController@insertform')->middleware('auth');
 
-Route::post('create','App\Http\Controllers\UserInsertController@insert');
+Route::post('create','App\Http\Controllers\UserInsertController@insert')->middleware('auth');
 
-Route::post('multiple1','App\Http\Controllers\UserInsertController@mut');
+Route::post('multiple1','App\Http\Controllers\UserInsertController@mut')->middleware('auth');
 
-Route::post('delete1','App\Http\Controllers\UserInsertController@delete');
-Route::get('trial','App\Http\Controllers\DriverController@driverfun');
+Route::post('delete1','App\Http\Controllers\UserInsertController@delete')->middleware('auth');
+Route::get('trial','App\Http\Controllers\DriverController@driverfun')->middleware('auth');
 
 
 //localhost:8000/train 
@@ -46,7 +46,7 @@ Route::post('train','App\Http\Controllers\TrainingController@indexe');
 
 //localhost:8000/traintableview.
 
-Route::get('trained','App\Http\Controllers\TrainingViewController@index');
+Route::get('trained','App\Http\Controllers\TrainingViewController@index')->middleware('auth');
 
 
 Route::post('multiple2','App\Http\Controllers\UserInsertController@mut2');
