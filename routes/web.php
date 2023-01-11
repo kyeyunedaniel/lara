@@ -82,3 +82,6 @@ Route::get('assetborrowing','App\Http\Controllers\AssetBorrowingController@index
 Route::get('assetborrowing/lists','App\Http\Controllers\AssetBorrowingController@getLists')->name('asset-borrow.index.getlist');
 
 Route::get('pdfview','App\Http\Controllers\StudViewController@pdfviewer');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
