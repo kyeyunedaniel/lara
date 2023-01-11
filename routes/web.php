@@ -85,3 +85,7 @@ Route::get('assetborrowing/lists','App\Http\Controllers\AssetBorrowingController
 
 Route::get('pdfview','App\Http\Controllers\StudViewController@pdfviewer');
 
+Route::prefix('admin')->middleware('auth')->group(function(){
+
+    //Route::get('products', 'App\Http\Controllers\adminController@index')->name('admin.index')
+});
